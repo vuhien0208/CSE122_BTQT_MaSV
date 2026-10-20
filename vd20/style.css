@@ -1,0 +1,136 @@
+/* Cấu hình chung: nền tối, căn giữa trang */
+body {
+    background-color: #12161f;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    max-width: 600px;
+}
+
+/* Khung chứa ảnh và chữ */
+.display-box {
+    background-color: #1a2230;
+    border: 1px solid #2a3548;
+    border-radius: 16px;
+    padding: 30px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+.image-container img {
+    width: 180px;
+    height: auto;
+    display: block;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Dòng chữ Special For You */
+.text-special {
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+    font-size: 26px;
+    color: #f1c40f;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Thanh công cụ chứa các nút bấm */
+.button-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    max-width: 550px;
+}
+
+/* Định dạng các nút bấm */
+.effect-btn {
+    background-color: #1e293b;
+    color: #cbd5e1;
+    border: 1px solid #334155;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.effect-btn:hover {
+    background-color: #334155;
+    color: #ffffff;
+}
+
+/* Nút đang được chọn (active) tô nổi bật màu xanh dương */
+.effect-btn.active {
+    background-color: #2563eb;
+    color: #ffffff;
+    border-color: #3b82f6;
+    font-weight: bold;
+}
+
+/* --- CÁC HIỆU ỨNG CSS3 FILTER & TRANSFORM --- */
+.effect-gray {
+    filter: grayscale(100%);
+}
+
+.effect-xray {
+    filter: grayscale(100%) invert(100%) contrast(150%);
+}
+
+.effect-invert {
+    filter: invert(100%);
+}
+
+.effect-fliph {
+    transform: scaleX(-1);
+}
+
+.effect-flipv {
+    transform: scaleY(-1);
+}
+
+.effect-glow {
+    filter: drop-shadow(0 0 12px #3b82f6) brightness(120%);
+}
+
+.effect-shadow {
+    filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.8));
+}
+
+.effect-bold-shadow {
+    filter: drop-shadow(8px 8px 10px rgba(0, 0, 0, 0.9));
+}
+
+.effect-dropshadow {
+    filter: drop-shadow(5px 10px 4px #000000);
+}
+
+.effect-blur {
+    filter: blur(4px);
+}
+
+.effect-wave {
+    transform: skewX(15deg) rotate(3deg);
+}
+
+.effect-mask {
+    filter: sepia(80%) contrast(120%) brightness(90%);
+}
+
+.effect-alpha {
+    opacity: 0.4;
+}

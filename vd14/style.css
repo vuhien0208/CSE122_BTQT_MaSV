@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 3px 28px;
+    background-color: white;
+    color: #333;
+}
+
+
+/* Tiêu đề chính */
+h1 {
+    background-color: #2e7d32;
+    color: #ffeb3b;
+    text-align: center;
+    font-size: 21px;
+    padding: 17px 10px;
+    margin: 0;
+}
+
+
+/* Đoạn giới thiệu */
+.intro {
+    color: #1b5e20;
+    font-style: italic;
+    text-align: center;
+    font-size: 14px;
+    padding: 23px 0 13px;
+    border-bottom: 1px solid #dce5dc;
+    margin: 0;
+}
+
+
+/* Bố cục lưới 3 cột */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 30px 21px 18px;
+}
+
+
+/* Khối kỳ quan */
+.card {
+    border: 1px solid #dce5dc;
+    border-radius: 7px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+
+/* Hình ảnh */
+.card img {
+    width: 100%;
+    height: 128px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 2px solid #2e7d32;
+}
+
+
+/* Nội dung */
+.content {
+    padding: 11px 12px 10px;
+}
+
+
+/* Tiêu đề từng kỳ quan */
+.content h2 {
+    color: #1b5e20;
+    font-size: 14px;
+    margin: 0 0 6px;
+}
+
+
+/* Mô tả */
+.content p {
+    font-size: 12px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+
+/* Chân trang */
+.footer {
+    height: 7px;
+    background-color: #eeeeee;
+    margin-top: 0;
+}
+
+
+/* Máy tính bảng */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 20px 5px;
+    }
+
+
+    body {
+        padding: 3px 12px;
+    }
+}
+
+
+/* Điện thoại */
+@media (max-width: 480px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+
+    h1 {
+        font-size: 18px;
+    }
+
+
+    .intro {
+        line-height: 1.6;
+    }
+}

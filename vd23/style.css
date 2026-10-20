@@ -1,0 +1,109 @@
+/* Thiết lập chung */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 1100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+/* Phần tiêu đề */
+.header {
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #0f172a;
+}
+
+.header p {
+    font-size: 14px;
+    color: #64748b;
+}
+
+/* --- LƯỚI 6 ẢNH (CSS GRID) --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+/* Khung từng ảnh (Item) */
+.gallery-item {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    border-radius: 14px;
+    overflow: hidden; /* Cắt phần ảnh phóng to không bị tràn ra ngoài khung bo góc */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Đổ bóng */
+    background-color: #e2e8f0;
+}
+
+/* Thẻ hình ảnh */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease; /* Hiệu ứng mượt mà khi zoom */
+}
+
+/* --- LỚP PHỦ GRADIENT ĐEN MỜ & CHỮ TÊN ĐỊA DANH --- */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Lớp phủ dùng gradient đen mờ từ trong suốt sang tối ở phần đáy */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.75) 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 15px 20px;
+    pointer-events: none; /* Giúp sự kiện chuột nhận xuyên qua lớp phủ vào khung */
+}
+
+.location-name {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* --- HIỆU ỨNG KHI RÊ CHUỘT (HOVER) --- */
+.gallery-item:hover img {
+    transform: scale(1.1); /* Phóng to ảnh mượt mà */
+}
+
+/* --- RESPONSIVE: Màn hình nhỏ tự động thu gọn cột --- */
+@media (max-width: 900px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,166 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    background: #f1f2f6;
+    font-family: Arial, sans-serif;
+    color: #222;
+}
+.todo-container {
+    max-width: 650px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+.header {
+    padding: 18px 24px;
+    background: #6928df;
+    color: white;
+}
+.header h1{
+    margin: 0 0 5px;
+    font-size: 23px;
+}
+.header p {
+    margin: 0;
+    font-size: 14px;
+    color: #e9dcff;
+    line-height: 1.5;
+}
+.todo-form {
+    margin: flex;
+    gap: 10px;
+    padding: 18px 24px;
+    border-bottom: 1px solid #eee;
+}
+.todo-form input {
+    flex: 1;
+    min-width: 0;
+    padding: 11px 13px;
+    border: 1px solid #ded9eb;
+    border-radius: 9px;
+    font-size: 14px;
+    outline: none;
+}
+.todo-form input:focus {
+    border-color: #6928df;
+}
+.todo-form button {
+    padding: 0 22px;
+    border: none;
+    border-radius: 9px;
+    background: #6928df;
+    color: 14px;
+    cursor: pointer;
+}
+.todo-form button:hover {
+    list-style: none;
+    padding: 0 14px;
+    margin: 0;
+}
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 0;
+    border-bottom: 1px dashed #eee8fa;
+}
+.todo-item:last-child {
+    border-bottom: none;
+}
+.todo-checkbox {
+    width: 21px;
+    height: 21px;
+    flex-shrink: 0;
+    accent-color: #6928df;
+    cursor: pointer;
+}
+
+
+.todo-text {
+    flex: 1;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+    cursor: pointer;
+}
+
+
+.todo-item.completed .todo-text {
+    color: #9ca3af;
+    text-decoration: line-through;
+}
+
+
+.delete-btn {
+    padding: 5px 12px;
+    border: none;
+    border-radius: 7px;
+    background: #fee2e2;
+    color: #dc2626;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+
+.delete-btn:hover {
+    background: #fecaca;
+}
+
+
+.footer {
+    padding: 15px 24px 5px;
+    color: #737b8c;
+    font-size: 13px;
+}
+
+
+.empty-message {
+    padding: 20px 0;
+    color: #999;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+
+    .header {
+        padding: 18px;
+    }
+
+
+    .header h1 {
+        font-size: 20px;
+    }
+
+
+    .todo-form {
+        padding: 15px;
+    }
+
+
+    .todo-list {
+        padding: 0 15px;
+    }
+
+
+    .footer {
+        padding: 15px;
+    }
+
+
+    .todo-form button {
+        padding: 0 15px;
+    }
+}
+

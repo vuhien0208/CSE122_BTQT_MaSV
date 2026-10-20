@@ -1,0 +1,182 @@
+/* Cấu hình chung */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1050px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+}
+
+/* Phần tiêu đề */
+.header {
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.header p {
+    font-size: 14px;
+    color: #64748b;
+}
+
+/* --- BẢNG GIÁ 3 CỘT (CSS GRID) --- */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    width: 100%;
+    align-items: center;
+}
+
+/* Kiểu dáng chung cho mỗi thẻ gói giá */
+.pricing-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 35px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+/* Hiệu ứng hover cho thẻ thông thường */
+.pricing-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* --- LÀM NỔI BẬT GÓI GIỮA (PRO) --- */
+.pricing-card.popular {
+    border: 2px solid #6366f1; /* Viền màu nổi bật */
+    transform: scale(1.04);     /* Nâng và phóng to hơn các cột khác */
+    box-shadow: 0 12px 28px rgba(99, 102, 241, 0.15); /* Bóng đậm hơn */
+    z-index: 2;
+}
+
+.pricing-card.popular:hover {
+    transform: scale(1.04) translateY(-6px);
+    box-shadow: 0 18px 35px rgba(99, 102, 241, 0.25);
+}
+
+/* Nhãn (Badge) */
+.badge {
+    background-color: #f1f5f9;
+    color: #475569;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.popular-badge {
+    background-color: #e0e7ff;
+    color: #4338ca;
+}
+
+/* Tên gói */
+.plan-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1e293b;
+    margin-bottom: 12px;
+}
+
+/* Giá tiền */
+.plan-price {
+    font-size: 36px;
+    font-weight: bold;
+    color: #0f172a;
+    margin-bottom: 25px;
+}
+
+.currency {
+    font-size: 16px;
+    font-weight: normal;
+    color: #64748b;
+}
+
+/* Danh sách quyền lợi */
+.feature-list {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    color: #475569;
+}
+
+/* Nút đăng ký / liên hệ */
+.btn {
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: #f1f5f9;
+    color: #334155;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn:hover {
+    background-color: #e2e8f0;
+}
+
+/* Nút bấm nổi bật cho gói Pro */
+.btn-primary {
+    background-color: #5855eb;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #4f46e5;
+}
+
+/* --- RESPONSIVE: Màn hình nhỏ gộp thành 1 cột --- */
+@media (max-width: 850px) {
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .pricing-card.popular {
+        transform: none; /* Bỏ scale cố định trên mobile để bố cục đều */
+    }
+    
+    .pricing-card.popular:hover {
+        transform: translateY(-4px);
+    }
+}

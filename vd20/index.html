@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiệu ứng ảnh và chữ với CSS3 & JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-container">
+        <!-- Khung hiển thị ảnh hoa hồng và dòng chữ -->
+        <div class="display-box">
+            <div class="image-container">
+                <img id="roseImage" src="hoahong.gif" alt="Hoa hồng">
+            </div>
+            <div class="text-special" id="specialText">Special For You</div>
+        </div>
+
+        <!-- Thanh nút bấm chọn hiệu ứng -->
+        <div class="button-toolbar">
+            <button class="effect-btn active" onclick="applyEffect('gray', this)">Gray</button>
+            <button class="effect-btn" onclick="applyEffect('xray', this)">Xray</button>
+            <button class="effect-btn" onclick="applyEffect('invert', this)">Invert</button>
+            <button class="effect-btn" onclick="applyEffect('fliph', this)">FlipH</button>
+            <button class="effect-btn" onclick="applyEffect('flipv', this)">FlipV</button>
+            <button class="effect-btn" onclick="applyEffect('glow', this)">Glow</button>
+            <button class="effect-btn" onclick="applyEffect('shadow', this)">Shadow</button>
+            <button class="effect-btn" onclick="applyEffect('bold-shadow', this)">Bold Shadow</button>
+            <button class="effect-btn" onclick="applyEffect('dropshadow', this)">DropShadow</button>
+            <button class="effect-btn" onclick="applyEffect('blur', this)">Blur</button>
+            <button class="effect-btn" onclick="applyEffect('wave', this)">Wave</button>
+            <button class="effect-btn" onclick="applyEffect('mask', this)">Mask</button>
+            <button class="effect-btn" onclick="applyEffect('alpha', this)">Alpha</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

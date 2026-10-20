@@ -1,0 +1,148 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+}
+body {
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+}
+.profile-container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #ffffff;
+    box-shadow: none;
+    border-radius: 0;
+    overflow: hidden;
+}
+.profile-sidebar {
+    width: 350px;
+    background-color: #1668C1;
+    color: #ffffff;
+    padding: 50px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+.avatar-circle {
+    width: 120px;
+    height: 120px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0 ,0, 0.15);
+}
+.avatar-circle span {
+    color: #1668C1;
+    font-size: 36px;
+    font-weight: bold;
+}
+.profile-name {
+    font-size: 22px;
+    margin: 0 0 10px 0;
+    font-weight: bold;
+}
+.profile-title {
+    font-size: 14px;
+    margin: 0 0 40px 0;
+    opacity: 0.9;
+}
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: left;
+    font-size: 13.5px;
+}
+.contact-list li {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    word-break: break-all;
+}
+
+
+.contact-list .icon {
+    margin-right: 12px;
+    font-size: 15px;
+    width: 20px;
+    text-align: center;
+}
+
+.profile-content {
+    flex: 1;
+    padding: 50px 60px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    overflow-y: auto;
+}
+
+
+.content-section {
+    margin-bottom: 35px;
+}
+
+
+.content-section:last-child {
+    margin-bottom: 0;
+}
+
+
+.content-section h2 {
+    color: #1668C1;
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.content-section p {
+    color: #333333;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+/* Kỹ năng hiển thị dạng chip bo tròn */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+
+.skill-chip {
+    background-color: #eaf1fb;
+    color: #1668C1;
+    padding: 7px 16px;
+    border-radius: 20px; /* Bo tròn tạo hình chip */
+    font-size: 13.5px;
+    font-weight: 500;
+}
+
+
+/* Liên kết màu xanh */
+.links-list a {
+    color: #1668C1;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+
+.links-list a:hover {
+    text-decoration: underline;
+}

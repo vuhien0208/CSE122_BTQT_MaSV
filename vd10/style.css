@@ -1,0 +1,185 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    background-color: #f0f2f5;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.contact-container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 900px;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+.contact-header {
+    background-color: #0d6b59;
+    color: #ffffff;
+    padding: 30px 40px;
+}
+.contact-header h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+.contact-header p {
+    font-size: 15px;
+    opacity: 0.95;
+}
+form{
+    padding: 40px;
+}
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 30px;
+    margin-bottom: 24px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+.form-group.full-width {
+    grid-column: span 2;
+    margin-bottom: 20px;
+}
+label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #dcdfe6;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #333333;
+    background-color: #fff;
+    transition: all 0.2s ease;
+}
+
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #0d6b59;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(13, 107, 89, 0.12);
+}
+
+
+textarea {
+    resize: vertical;
+}
+
+
+/* Hàng checkbox */
+.form-footer-row {
+    display: flex;
+    justify-content: flex-end; /* Đẩy checkbox sang phía bên phải giống ảnh mẫu */
+    margin-bottom: 30px;
+}
+
+
+.form-group-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    max-width: 300px;
+}
+
+
+.form-group-checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #0d6b59;
+    cursor: pointer;
+    margin-top: 2px;
+}
+
+
+.form-group-checkbox label {
+    font-size: 14px;
+    font-weight: normal;
+    color: #333333;
+    cursor: pointer;
+    line-height: 1.4;
+    margin-bottom: 0;
+}
+
+
+/* Nút hành động */
+.form-actions {
+    display: flex;
+    gap: 14px;
+}
+
+
+.btn-submit {
+    background-color: #0d6b59; /* Màu xanh nổi bật chuẩn mẫu */
+    color: #ffffff;
+    border: none;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+
+.btn-submit:hover {
+    background-color: #094f41;
+}
+
+
+.btn-reset {
+    background-color: #e4e7eb; /* Nút nhập lại màu nhạt */
+    color: #4b5563;
+    border: none;
+    padding: 14px 28px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+
+.btn-reset:hover {
+    background-color: #d1d5db;
+}
+
+
+/* Responsive cho thiết bị di động */
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr; /* Gom thành 1 cột trên màn hình nhỏ */
+    }
+    .form-group.full-width {
+        grid-column: span 1;
+    }
+    form {
+        padding: 20px;
+    }
+    .contact-header {
+        padding: 20px;
+    }
+    .form-footer-row {
+        justify-content: flex-start;
+    }
+}

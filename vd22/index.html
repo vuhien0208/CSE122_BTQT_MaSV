@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chế độ Sáng / Tối (Dark/Light Mode)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="toi"> <!-- Mặc định bật sẵn chế độ tối giống hình mẫu -->
+
+    <div class="container">
+        <!-- Phần tiêu đề và nút gạt -->
+        <header class="header">
+            <h1>Chế độ Tối / Sáng</h1>
+            <label class="switch">
+                <input type="checkbox" id="modeToggle" checked onclick="toggleTheme()">
+                <span class="slider"></span>
+            </label>
+        </header>
+
+        <!-- Các thẻ thông tin -->
+        <div class="card">
+            <h2>Biến CSS (CSS Variables)</h2>
+            <p>Toàn bộ màu sắc được khai báo trong :root và ghi đè bằng class .toi.</p>
+        </div>
+
+        <div class="card">
+            <h2>Chuyển đổi bằng JavaScript</h2>
+            <p>Nút gạt thêm/bỏ class .toi trên &lt;body&gt; — mọi thành phần tự đổi màu.</p>
+        </div>
+
+        <div class="card">
+            <h2>Chuyển màu mượt</h2>
+            <p>Dùng transition để màu nền và chữ chuyển dần, không bị giật.</p>
+        </div>
+
+        <!-- Chú thích trạng thái dưới cùng -->
+        <footer class="footer-note" id="statusNote">
+            Đây là giao diện ở chế độ TỐI (đang bật).
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

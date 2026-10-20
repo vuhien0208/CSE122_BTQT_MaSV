@@ -1,0 +1,29 @@
+body{
+    background-color: #FFFDE7;
+}
+h1{
+    color: #D40000;
+    background-color: #FFD9E6;
+    text-align: center;
+    font-weight: bold;
+    padding: 8px;
+}
+.tho{
+    text-align: center;
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.6;
+}
+.kho1,
+.kho3{
+    color: #0033CC;
+}
+.KHO2{
+    color: #D40000;
+}
+hr{
+    width: 55%;
+    border: none;
+    border-top: 2px solid #3366FF;
+    margin: 20px auto;
+}

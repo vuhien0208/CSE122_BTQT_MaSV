@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 13px;
+    background-color: #fffdf8;
+    font-family: 'Times New Roman', serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #222;
+}
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+h1 {
+    color: #e94e0b;
+    font-size: 26px;
+    line-height: 1.2;
+    margin: 0;
+    font-weight: bold;
+}
+.subtitle {
+    color: #e94e0b;
+    font-size: 14px;
+    margin: 0 0 7px;
+}
+.content {
+    overflow: auto;
+}
+.content p {
+    margin: 0 0 12px;
+    text-align: justify;
+}
+.flower-image {
+    float: right;
+    width: 190px;
+    height: auto;
+    margin: 0 0 10px 12px;
+}
+.intro::first-letter {
+    float: left;
+    font-size: 36px;
+    line-height: 0.85;
+    font-weight: bold;
+    color: #e94e0b;
+    padding-right: 4px;
+}
+.specialties {
+    clear: both;
+    margin-top: 22px;
+    padding: 8px 13px 10px;
+    border: 2px solid #60a568;
+    border-radius: 6px;
+    background-color: #f4faf4;
+}
+.specialties h2 {
+    margin: 0 0 4px;
+    color: #43834b;
+    font-size: 15px;
+    font-style: italic;
+}
+.specialties ul {
+    columns: 2;
+    column-gap: 30px;
+    margin: 0;
+    padding-left: 15px;
+}
+.specialties li {
+    padding-right: 5px;
+    margin-bottom: 2px;
+    break-inside: avoid;
+}
+@media (max-width: 500px) {
+    .flower-image {
+        width: 130px;
+        margin-left: 8px;
+    }
+    .specialties ul {
+        columns: 1;
+    }
+}

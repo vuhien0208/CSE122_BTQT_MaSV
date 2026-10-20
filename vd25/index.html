@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSE.TLU Travel</title>
+    <!-- Nhúng Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <!-- 1. NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">CSE.TLU Travel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="#">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Điểm đến</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Tour</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Liên hệ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. CONTAINER CHÍNH -->
+    <div class="container my-4">
+        
+        <!-- HERO SECTION (Khối bo góc chứa tiêu đề và nút đặt tour) -->
+        <div class="p-5 mb-4 bg-white border rounded-3 text-center shadow-sm">
+            <div class="container-fluid py-4">
+                <h1 class="display-5 fw-bold text-primary mb-3">Khám phá Việt Nam</h1>
+                <p class="col-md-8 fs-5 mx-auto text-muted mb-4">Hành trình qua những kỳ quan thiên nhiên đẹp nhất đất nước.</p>
+                <button class="btn btn-primary btn-lg px-4" type="button">Đặt tour ngay</button>
+            </div>
+        </div>
+
+        <!-- LƯỚI 3 THẺ (CARD) GIỚI THIỆU ĐIỂM ĐẾN -->
+        <div class="row g-4 mb-5">
+            
+            <!-- Card 1: Vịnh Hạ Long -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="vinh-ha-long.jpg" class="card-img-top" alt="Vịnh Hạ Long">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">Vịnh Hạ Long</h5>
+                        <p class="card-text text-muted">Gần 2.000 đảo đá vôi, Di sản thiên nhiên thế giới.</p>
+                        <a href="#" class="btn btn-outline-primary mt-auto align-self-start">Xem thêm</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Thác Bản Giốc -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="thac-ban-gioc.jpg" class="card-img-top" alt="Thác Bản Giốc">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">Thác Bản Giốc</h5>
+                        <p class="card-text text-muted">Thác nước đẹp nhất Việt Nam, nằm ở Cao Bằng.</p>
+                        <a href="#" class="btn btn-outline-primary mt-auto align-self-start">Xem thêm</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Fansipan -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="fansipan.jpg" class="card-img-top" alt="Fansipan">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">Fansipan</h5>
+                        <p class="card-text text-muted">“Mái nhà Đông Dương”, cao 3.147 m, thuộc Lào Cai.</p>
+                        <a href="#" class="btn btn-outline-primary mt-auto align-self-start">Xem thêm</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 3. FOOTER (Ghi bản quyền) -->
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="container">
+            <small>CSE.TLU - ChimCanhCut - 0868600513[cite: 7]</small>
+        </div>
+    </footer>
+
+    <!-- Nhúng Bootstrap 5 JS Bundle CDN (Hỗ trợ nút Menu Hamburger khi thu nhỏ màn hình) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

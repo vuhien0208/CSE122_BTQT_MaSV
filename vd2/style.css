@@ -1,0 +1,29 @@
+body{
+    background: linear-gradient(to right, #C9A227, #A8861B);
+    color: #FFFFFF;
+    margin: 0;
+    padding: 25px 40px;
+    font-family: "Times New Roman", serif;
+}
+h1{
+    text-align: center;
+    font-size: 30px;
+    text-shadow: 2px 2px 4px #555555;
+    margin-bottom: 15px;
+}
+img{
+    float: right;
+    width: 225px;
+    height: 335px;
+    object-fit: cover;
+    margin: 0 5px 15px 25px;
+    border: 3px solid white;
+    border-radius: 5px;
+}
+p{
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.55;
+    text-align: justify;
+    margin-top: 15px;
+}

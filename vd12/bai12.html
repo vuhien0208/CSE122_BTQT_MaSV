@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 12 - In lịch</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            padding: 8px 16px;
+            font-family: Georgia, "Times New Roman", serif;
+            background: #f2f2f2 url("Anh/Bai12/Nen.gif") center center / cover fixed no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            min-height: 560px;
+            padding: 38px;
+            background: rgba(255, 255, 255, 0.96);
+            border-radius: 20px;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+        }
+
+        .calendar-result {
+            min-height: 258px;
+            border: 1px solid #cfcfcf;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .year {
+            color: #d21f26;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 0;
+        }
+
+        .month {
+            color: #0864c9;
+            font-size: 34px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .day-number {
+            color: #d21f26;
+            font-size: clamp(76px, 10vw, 100px);
+            font-weight: bold;
+            line-height: 1.05;
+            margin: 14px 0 0;
+        }
+
+        .weekday {
+            color: #0864c9;
+            font-size: 32px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .greeting {
+            color: #d21f26;
+            text-align: center;
+            font-size: 32px;
+            font-style: italic;
+            margin: 24px 0 28px;
+        }
+
+        .input-form {
+            border: 3px solid #0864c9;
+            border-radius: 15px;
+            padding: 26px 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .field {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .field label {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 24px;
+            color: #111;
+        }
+
+        .field input {
+            width: 100%;
+            max-width: 150px;
+            height: 48px;
+            border: 1px solid #c7c7c7;
+            border-radius: 8px;
+            padding: 8px 12px;
+            text-align: center;
+            font-size: 23px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .field input:focus {
+            outline: 2px solid #86b7fe;
+            border-color: #0864c9;
+        }
+
+        .print-button {
+            min-width: 105px;
+            min-height: 78px;
+            border: 0;
+            border-radius: 8px;
+            padding: 12px 18px;
+            background: #56727e;
+            color: white;
+            font-size: 22px;
+            line-height: 1.15;
+            cursor: pointer;
+        }
+
+        .print-button:hover {
+            background: #405b66;
+        }
+
+        .error {
+            display: none;
+            color: #c62828;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 14px 0 0;
+        }
+
+        @media (max-width: 650px) {
+            .container {
+                padding: 18px;
+                min-height: auto;
+            }
+
+            .calendar-result {
+                min-height: 230px;
+            }
+
+            .input-form {
+                flex-wrap: wrap;
+                padding: 18px 12px;
+                gap: 14px;
+            }
+
+            .field {
+                flex-basis: 28%;
+            }
+
+            .field label {
+                font-size: 18px;
+            }
+
+            .field input {
+                font-size: 18px;
+                height: 42px;
+            }
+
+            .print-button {
+                width: 100%;
+                min-height: 52px;
+            }
+
+            .greeting {
+                font-size: 26px;
+            }
+
+            .month,
+            .weekday {
+                font-size: 27px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <section class="calendar-result" aria-live="polite">
+            <div class="year" id="resultYear">2026</div>
+            <h1 class="month" id="resultMonth">Tháng 12</h1>
+            <div class="day-number" id="resultDay">24</div>
+            <div class="weekday" id="resultWeekday">Thứ năm</div>
+        </section>
+
+        <p class="greeting" id="greeting">Chào buổi tối!</p>
+
+        <form class="input-form" id="calendarForm">
+            <div class="field">
+                <label for="day">Ngày</label>
+                <input type="number" id="day" name="day" min="1" max="31" value="24" required>
+            </div>
+
+            <div class="field">
+                <label for="monthInput">Tháng</label>
+                <input type="number" id="monthInput" name="month" min="1" max="12" value="12" required>
+            </div>
+
+            <div class="field">
+                <label for="yearInput">Năm</label>
+                <input type="number" id="yearInput" name="year" min="1" max="9999" value="2026" required>
+            </div>
+
+            <button class="print-button" type="submit">In<br>lịch</button>
+        </form>
+
+        <p class="error" id="errorMessage" role="alert"></p>
+    </main>
+
+    <script>
+        const form = document.getElementById("calendarForm");
+
+        const weekdays = [
+            "Chủ nhật",
+            "Thứ hai",
+            "Thứ ba",
+            "Thứ tư",
+            "Thứ năm",
+            "Thứ sáu",
+            "Thứ bảy"
+        ];
+
+        function getGreeting() {
+            const hour = new Date().getHours();
+
+            if (hour >= 5 && hour < 11) {
+                return "Chào buổi sáng!";
+            } else if (hour >= 11 && hour < 13) {
+                return "Chào buổi trưa!";
+            } else if (hour >= 13 && hour < 18) {
+                return "Chào buổi chiều!";
+            } else {
+                return "Chào buổi tối!";
+            }
+        }
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const day = Number(document.getElementById("day").value);
+            const month = Number(document.getElementById("monthInput").value);
+            const year = Number(document.getElementById("yearInput").value);
+            const errorMessage = document.getElementById("errorMessage");
+
+            // Kiểm tra dữ liệu nhập vào
+            if (!Number.isInteger(day) || !Number.isInteger(month) ||
+                !Number.isInteger(year) || year < 1 ||
+                month < 1 || month > 12 || day < 1 || day > 31) {
+                errorMessage.textContent = "Vui lòng nhập ngày, tháng, năm hợp lệ.";
+                errorMessage.style.display = "block";
+                return;
+            }
+
+            // JavaScript Date: tháng được tính từ 0 đến 11
+            const date = new Date(year, month - 1, day);
+
+            // Kiểm tra ngày có tồn tại thực tế hay không (ví dụ 31/02)
+            if (date.getFullYear() !== year ||
+                date.getMonth() !== month - 1 ||
+                date.getDate() !== day) {
+                errorMessage.textContent = "Ngày không tồn tại trong tháng đã chọn.";
+                errorMessage.style.display = "block";
+                return;
+            }
+
+            errorMessage.style.display = "none";
+
+            document.getElementById("resultYear").textContent = year;
+            document.getElementById("resultMonth").textContent = "Tháng " + month;
+            document.getElementById("resultDay").textContent = day;
+            document.getElementById("resultWeekday").textContent =
+                weekdays[date.getDay()];
+            document.getElementById("greeting").textContent = getGreeting();
+        });
+
+        // Hiển thị lời chào theo thời gian hiện tại khi mở trang
+        document.getElementById("greeting").textContent = getGreeting();
+    </script>
+</body>
+</html>

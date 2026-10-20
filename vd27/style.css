@@ -1,0 +1,6 @@
+/* Ảnh trong thẻ: cao cố định, cắt gọn theo khung */
+.card-img-top {
+  height: 180px;
+  object-fit: cover;
+  background-color: #dee2e6;
+}
